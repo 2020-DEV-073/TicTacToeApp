@@ -1,18 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.GameActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data class="MainBinder">
+        <variable
+            name="gameViewModel"
+            type="com.kata.tictactoeapp.viewmodel.GameViewModel" />
+    </data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TableLayout
+
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:context=".view.GameActivity"
+        android:background="@color/whitebackground">
+        <TableRow
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3pt">
+            <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:id="@+id/bu1"
+                android:layout_marginLeft="3pt"
+                android:background="@color/whileBu"
+                android:text='@{gameViewModel.cells["00"]}'
+                android:onClick="@{() -> gameViewModel.onClickedCellAt(0, 0)}"/>
+            <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:id="@+id/bu2"
+                android:layout_marginLeft="3pt"
+                android:background="@color/whileBu"
+                android:text='@{gameViewModel.cells["01"]}'
+                android:onClick="@{() -> gameViewModel.onClickedCellAt(0, 1)}"/>
+            <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:id="@+id/bu3"
+                android:layout_marginLeft="3pt"
+                android:background="@color/whileBu"
+                android:text='@{gameViewModel.cells["02"]}'
+                android:onClick="@{() -> gameViewModel.onClickedCellAt(0, 2)}"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3pt">
+            <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:id="@+id/bu4"
+                android:layout_marginLeft="3pt"
+                android:background="@color/whileBu"
+                android:text='@{gameViewModel.cells["10"]}'
+                android:onClick="@{() -> gameViewModel.onClickedCellAt(1, 0)}"/>
+            <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:id="@+id/bu5"
+                android:layout_marginLeft="3pt"
+                android:background="@color/whileBu"
+                android:text='@{gameViewModel.cells["11"]}'
+                android:onClick="@{() -> gameViewModel.onClickedCellAt(1, 1)}"/>
+            <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:id="@+id/bu6"
+                android:layout_marginLeft="3pt"
+                android:background="@color/whileBu"
+                android:text='@{gameViewModel.cells["12"]}'
+                android:onClick="@{() -> gameViewModel.onClickedCellAt(1, 2)}"/>
+        </TableRow>
+
+
+
+        <TableRow
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3pt">
+            <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:id="@+id/bu7"
+                android:layout_marginLeft="3pt"
+                android:background="@color/whileBu"
+                android:text='@{gameViewModel.cells["20"]}'
+                android:onClick="@{() -> gameViewModel.onClickedCellAt(2, 0)}"/>
+            <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:id="@+id/bu8"
+                android:layout_marginLeft="3pt"
+                android:background="@color/whileBu"
+                android:text='@{gameViewModel.cells["21"]}'
+                android:onClick="@{() -> gameViewModel.onClickedCellAt(2, 1)}"/>
+            <Button
+                android:layout_width="40pt"
+                android:layout_height="40pt"
+                android:id="@+id/bu9"
+                android:layout_marginLeft="3pt"
+                android:background="@color/whileBu"
+                android:text='@{gameViewModel.cells["22"]}'
+                android:onClick="@{() -> gameViewModel.onClickedCellAt(2, 2)}"/>
+        </TableRow>
+
+    </TableLayout>
+
+</layout>
